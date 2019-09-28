@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count Characters</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="project-css.css">
+</head>
+<body>
+	<div class="outer">
+		<textarea cols="70" rows="15" id="words"></textarea>
+		<br>
+		<p id="showchars"></p>
+		<p id="showwords"></p>
+		<br>
+		<div class="inner">
+			<button onclick="countwords()">Count Characters</button>
+			<button onclick="changelower()">Change to LowerCase</button>
+			<button onclick="changeupper()">Change to UpperCase</button>
+		</div>
+	</div>
+	<script>
+		function countwords()
+		{
+			var str = document.getElementById('words').value;
+			var n=str.length;
+			var i,c=1;
+			for (i = 0; i < n; i++)
+			{
+  				if(str.charAt(i)==' ')
+  					c++;
+			}
+			if(n==0)
+				c=0;
+			document.getElementById('showchars').innerHTML = "The Number of Characters are : "+n;
+			document.getElementById('showwords').innerHTML = "The Number of Words are : "+c;
+		}
+		function changelower()
+		{
+			var str = document.getElementById('words').value;
+			var str2="";
+			var n=str.length;
+			var i;
+			for (i = 0; i < n; i++)
+			{
+				var ch=str.charAt(i);
+  				if(ch==ch.toLowerCase())
+  					str2=str2+ch;
+  				else
+  					str2=str2+ch.toLowerCase();
+			}
+			document.getElementById('showchars').innerHTML = "Converted Lower Case String is : ";
+			document.getElementById('showwords').innerHTML = str2;
+		}
+		function changeupper()
+		{
+			var str = document.getElementById('words').value;
+			var str2="";
+			var n=str.length;
+			var i;
+			for (i = 0; i < n; i++)
+			{
+				var ch=str.charAt(i);
+  				if(ch==ch.toUpperCase())
+  					str2=str2+ch;
+  				else
+  					str2=str2+ch.toUpperCase();
+			}
+			document.getElementById('showchars').innerHTML = "Converted Upper Case String is : ";
+			document.getElementById('showwords').innerHTML = str2;
+		}
+	</script>
+</body>
+</html>
