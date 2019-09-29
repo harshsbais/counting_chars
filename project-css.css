@@ -7,6 +7,7 @@
 	
 	.outer
 	{
+		overflow: hidden;
 		top: 50%;
 		text-align: center;
 		height: 100vh;
@@ -19,6 +20,7 @@
 	
 	textarea
 	{
+		margin-top: 130px;
 		border: 2px solid #800020;
 		border-radius: 10px;
 		font-size: 1.2rem;
